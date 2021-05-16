@@ -1,5 +1,5 @@
 import requests
-
+import json
 
 #headers={ 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36' }
 #This is your response header, replace the above value with the header, from the network tab in your web-console
@@ -17,7 +17,7 @@ res = requests.get(url,headers=headers)
 
 
 #this returns a list of n hospitals
-hospitals=json_data["centers"]    
+hospitals=res.json()["centers"]  
 
 #we iterate through every hospital, each list item is a dictionary
 
