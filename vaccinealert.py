@@ -4,14 +4,14 @@ import requests
 #headers={ 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36' }
 #This is your response header, replace the above value with the header, from the network tab in your web-console
 
-res = requests.get('https://www.cowin.gov.in/home', headers=headers)  
-res.request.headers   
-
-pincode='enteryourpincode'  
-#560035 etc
+pincode='560035'  
 #this is the pincode which you will be receiving updates on
 
-res = requests.get('https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=%(pincode)&date=16-05-2021',headers=headers)
+requestdate= datetime.today().strftime('%d-%m-%Y')
+
+url='https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode='+pincode+'&date=' +requestdate
+
+res = requests.get(url,headers=headers)
 
 #res = requests.get('https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=400607&date=16-05-2021',headers=headers)
 
