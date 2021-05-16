@@ -9,3 +9,4 @@ Important Notes:
 2. Have an SMTP Server up and running on your shell. The command-line for this is included in the code as well.
 3. Before running the script, make sure your account settings to accept mails from less-reliable sources is turned on.
 4. The idea is to send a notification, only if slots are available. Add this condition through (dose1 or dose2 > 0) for specific use case.
+5. Run using python vaccinealert.py
