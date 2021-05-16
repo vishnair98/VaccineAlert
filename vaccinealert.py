@@ -1,10 +1,14 @@
 import requests
 
-headers={ 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36' }
+
+#headers={ 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36' }
+#This is your response header, replace the above value with the header, from the network tab in your web-console
+
 res = requests.get('https://www.cowin.gov.in/home', headers=headers)  
 res.request.headers   
 
 pincode='enteryourpincode'  
+#560035 etc
 #this is the pincode which you will be receiving updates on
 
 res = requests.get('https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=%(pincode)&date=16-05-2021',headers=headers)
@@ -70,7 +74,7 @@ for obj in list:
 
 #enable messages from less secure accounts in gmail - https://support.google.com/accounts/answer/6010255
 
-#Start a local smtp server
+#Start a local smtp server in your shell
 #python -m smtpd -c DebuggingServer -n localhost:1025
 
 import smtplib, ssl
